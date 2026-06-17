@@ -1,8 +1,15 @@
 import CustomeFilter from "@/components/CustomeFilter";
 import Hero from "@/components/Hero";
 import Searchbar from "@/components/Searchbar";
+import { fetchCars } from "@/utils";
 
-export default function Home() {
+
+
+export default async function Home() {
+
+  const allCars = await fetchCars();
+  console.log(allCars)
+
   return (
   <main className="overflow-hidden bg-gray-100">
       <Hero />
@@ -23,4 +30,5 @@ export default function Home() {
     </main>
 
   );
+
 }
